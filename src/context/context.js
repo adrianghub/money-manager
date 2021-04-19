@@ -8,6 +8,8 @@ export const MoneyManagerContext = createContext(initialState);
 
 export const Provider = ({ children }) => {
   const [transactions, dispatch] = useReducer(contextReducer, initialState);
+
+  console.log(transactions);
   
   // Actions -> changing the state of transactions
   const addTransaction = (transaction) => dispatch({ type: 'ADD_TRANSACTION', payload: transaction });
