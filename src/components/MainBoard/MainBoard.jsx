@@ -12,8 +12,8 @@ const MainBoard = () => {
     <Card className={classes.root}>
       <CardHeader title="Money Manager" />
       <CardContent>
-        <Typography align="center" varient="h5">Total balance: 100zł</Typography>
-        <Typography varient="subtitle1" style={{ lineHeight: '1.5em', marginTop: '20px' }}>
+        <Typography align="center" varient="h5" style= {{ fontSize: '1.3rem' }} >Total balance: 100zł</Typography>
+        <Typography varient="subtitle1" style={{ lineHeight: '2.5em', marginTop: '20px' }}>
           {/* Data */}
           Try saying: Add income for 100zł in Category Salary for Monday.
         </Typography>
