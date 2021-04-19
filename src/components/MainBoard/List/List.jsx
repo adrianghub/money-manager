@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { List as MaterialUIList, ListItem, ListItemAvatar, ListItemText, Avatar, ListItemSecondaryAction, IconButton, Slide } from '@material-ui/core';
 import { Delete, MoneyOff } from '@material-ui/icons';
 
+import { MoneyManagerContext } from '../../../context/context'
 import useStyles from './styles';
 
 const List = () => {
   const classes = useStyles();
+
+  const { deleteTransaction } = useContext(MoneyManagerContext);
+
 
   const transactions = [
     { id: 1, type: 'Expense', category: 'Grocery', amount: '125', date: '18 April 2021'},
