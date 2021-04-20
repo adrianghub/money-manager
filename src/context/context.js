@@ -14,10 +14,14 @@ export const Provider = ({ children }) => {
   // Actions -> changing the state of transactions
   const addTransaction = (transaction) => dispatch({ type: 'ADD_TRANSACTION', payload: transaction });
 
-  const deleteTransactions = (id) => dispatch({ type: 'DELETE_TRANSACTION', payload: id });
+  const deleteTransaction = (id) => dispatch({ type: 'DELETE_TRANSACTION', payload: id });
 
   return (
-    <MoneyManagerContext.Provider value={{ addTransaction, deleteTransactions }}>
+    <MoneyManagerContext.Provider value={{ 
+      addTransaction, 
+      deleteTransaction,
+      transactions 
+      }}>
       {children}
     </MoneyManagerContext.Provider>
   )

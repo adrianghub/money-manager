@@ -8,14 +8,7 @@ import useStyles from './styles';
 const List = () => {
   const classes = useStyles();
 
-  const { deleteTransaction } = useContext(MoneyManagerContext);
-
-
-  const transactions = [
-    { id: 1, type: 'Expense', category: 'Grocery', amount: '125', date: '18 April 2021'},
-    { id: 2, type: 'Income', category: 'Salary', amount: '25', date: '14 April 2021'},
-    { id: 3, type: 'Income', category: 'Grandma', amount: '75', date: '12 April 2021'}
-  ];
+  const { deleteTransaction, transactions } = useContext(MoneyManagerContext);
 
   return (
     <MaterialUIList dense={false} className={classes.list}>
@@ -29,7 +22,7 @@ const List = () => {
             </ListItemAvatar>
             <ListItemText primary={transaction.category} secondary={`${transaction.amount}zł - ${transaction.date}`}/>
             <ListItemSecondaryAction>
-              <IconButton edge="end" aria-label="delete" onClick="">
+              <IconButton edge="end" aria-label="delete" onClick={() => deleteTransaction(transaction.id)}>
                 <Delete />
               </IconButton>
             </ListItemSecondaryAction>
