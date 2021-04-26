@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { MoneyManagerContext } from './context/context';
 
-import { incomeCategories, expanseCategories, resetCategories } from './constants/categories';
+import { incomeCategories, expenseCategories, resetCategories } from './constants/categories';
 
 // [
 //   { id: 1, type: 'Income', amount: 50, cateogry: 'Salary' }.
@@ -22,7 +22,7 @@ const useTransactions = (title) => {
   const { transactions } = useContext(MoneyManagerContext);
   const transactionsPerType = transactions.filter((t) => t.type === title);
   const total = transactionsPerType.reduce((sum, curr) => sum += curr.amount, 0);
-  const categories = title === 'Income' ? incomeCategories : expanseCategories;
+  const categories = title === 'Income' ? incomeCategories : expenseCategories;
 
   console.log({transactionsPerType, total, categories});
 
@@ -32,7 +32,7 @@ const useTransactions = (title) => {
     if(category) category.amount += t.amount;
   });
 
-  const filteredCategories = categories.filter((c) => c.amout > 0);
+  const filteredCategories = categories.filter((c) => c.amount > 0);
 
   const chartData = {
     datasets: [{
