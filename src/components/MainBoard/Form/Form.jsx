@@ -6,6 +6,7 @@ import { v4 as uuidv4 } from 'uuid';
 import useStyles from './styles';
 import { incomeCategories, expenseCategories } from '../../../constants/categories';
 import formatDate from '../../../utils/formatDate';
+import CustomSnackbar from '../../Snackbar/Snackbar';
 
 const initialState = {
   amount: '',
@@ -18,10 +19,12 @@ const Form = () => {
   const classes = useStyles();
   const [formData, setFormData] = useState(initialState);
   const { addTransaction } = useContext(MoneyManagerContext);
+  const [open, setOpen] = useState(false);
 
   const submitTransaction = () => {
     const transaction = { ...formData, amount: Number(formData.amount), id: uuidv4() }
 
+    setOpen(true);
     addTransaction(transaction);
 
     // Reset state to add new transaction
@@ -32,6 +35,7 @@ const Form = () => {
 
   return (
     <Grid container justify="center" spacing={2}>
+      <CustomSnackbar open={open} setOpen={setOpen} />
       <Grid item xs={12}>
         <Typography align="center" varient="subtitle2" gutterBottom>
           {/* Words that will be use by Speechly */}
