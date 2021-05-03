@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Grid } from "@material-ui/core";
 
 import Details from "./components/Details/Details";
@@ -7,6 +7,13 @@ import useStyles from "./styles";
 
 const App = () => {
   const classes = useStyles();
+
+  useEffect(() => {
+    
+    return () => {
+      
+    }
+  }, []);
 
   return (
     <>
@@ -21,7 +28,7 @@ const App = () => {
         <Grid item xs={12} sm={12} md={6}>
           <MainBoard />
         </Grid>
-        <Grid item xs={12} sm={12} md={5}>
+        <Grid className={classes.last} item xs={12} sm={12} md={5}>
           <Details title="Income" />
           <Details title="Expense" />
         </Grid>
