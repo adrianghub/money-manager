@@ -2,7 +2,7 @@ import React, { useReducer, createContext } from 'react';
 
 import contextReducer from './contextReducer.js';
 
-const initialState = [];
+const initialState = JSON.parse(localStorage.getItem('transactions')) || [];
 
 export const MoneyManagerContext = createContext(initialState);
 
