@@ -5,6 +5,7 @@ import { MoneyManagerContext } from '../../context/context';
 import useStyles from './styles';
 import Form from './Form/Form';
 import List from './List/List';
+import InfoCard from './InfoCard/InfoCard';
 
 
 const MainBoard = () => {
@@ -18,8 +19,7 @@ const MainBoard = () => {
       <CardContent>
         <Typography align="center" varient="h5" style= {{ fontSize: '1.3rem' }} >Total balance: {balance}zł</Typography>
         <Typography varient="subtitle1" style={{ lineHeight: '2.5em', marginTop: '20px' }}>
-          {/* Data */}
-          Try saying: Add income for 100zł in Category Salary for Monday.
+          <InfoCard />
         </Typography>
         <Divider />
         <Form />
