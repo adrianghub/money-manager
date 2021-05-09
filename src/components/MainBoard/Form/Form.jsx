@@ -82,6 +82,10 @@ const Form = () => {
             break;
         }
       })
+
+      if(segment.isFinal && formData.amount && formData.category && formData.date && formData.type) {
+        submitTransaction();
+      }
     }
   }, [segment]);
 
