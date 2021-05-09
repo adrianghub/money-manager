@@ -5,10 +5,12 @@ export default makeStyles((theme) => ({
     [theme.breakpoints.up('sm')]: {
       paddingBottom: '5%',
     },
+    [theme.breakpoints.up('md')]: {
+      marginRight: '50px!important',
+    },
   },
   last: {
     [theme.breakpoints.down('sm')]: {
-      marginBottom: theme.spacing(3),
       paddingBottom: '200px',
     },
   },

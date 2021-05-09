@@ -11,7 +11,7 @@ const Details = ({ title }) => {
   const { total, chartData } = useTransactions(title);
 
   return (
-    <Card className={title === 'Income' ? classes.income : classes.expense}>
+    <Card className={title === 'Income' ? classes.income : classes.expense} style={{ margin: '20px' }}>
       <CardHeader title={title} />
       <CardContent>
           <Typography varient="h5">{total}</Typography>
